@@ -1,0 +1,50 @@
+﻿@model IEnumerable<StudentManagement21A2.Models.All_Car>
+@{
+    ViewData["Title"] = "Wszystkie samochody";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nr_rej)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Marka)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rocznik)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Klasa)
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nr_rej)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marka)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rocznik)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Klasa)
+            </td>
+
+        </tr>
+        }
+    </tbody>
+</table>

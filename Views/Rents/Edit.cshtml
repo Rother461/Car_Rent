@@ -1,0 +1,49 @@
+﻿@model StudentManagement21A2.Models.Rent
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Rent</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id_wynajmu" />
+            <div class="form-group">
+                <label asp-for="Id_klienta" class="control-label"></label>
+                <select asp-for="Id_klienta" class="form-control" asp-items="ViewBag.Id_klienta"></select>
+                <span asp-validation-for="Id_klienta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nr_rej" class="control-label"></label>
+                <select asp-for="Nr_rej" class="form-control" asp-items="ViewBag.Nr_rej"></select>
+                <span asp-validation-for="Nr_rej" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Data_od" class="control-label"></label>
+                <input asp-for="Data_od" class="form-control" />
+                <span asp-validation-for="Data_od" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Data_do" class="control-label"></label>
+                <input asp-for="Data_do" class="form-control" />
+                <span asp-validation-for="Data_do" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
